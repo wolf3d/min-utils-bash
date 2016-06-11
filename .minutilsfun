@@ -1,3 +1,4 @@
+#!/bin/bash
 
 . .minutilscore
 
@@ -27,22 +28,24 @@ function npp {
 
 function cdfcd {
 # create directory for current day
-:
+date=$(date +%Y.%m.%d)
+create d $date
 }
 
 function gdfcd {
 # go to directory for current day
-:
+echo
 }
 
 function cwfcd {
 # create worknote for current day 
-:
+date=$(date +%Y.%m.%d)
+create n worknote.$date.txt
 }
 
 function owfcd {
 # open worknote for current day
-:
+echo ""
 }
 
 #vim:ts=4

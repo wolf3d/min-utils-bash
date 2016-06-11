@@ -2,12 +2,43 @@
 
 function create {
 
-if [ -n "$1" ]  # 
+if [[ -n "$1" && -n "$2" ]];  # 
 then
     case "$1" in
-        d) echo "creating directory"
+        d) #echo "creating directory"
+
+           if [ ! -d "$2" ]; then
+               echo "working directory $2 does not exist"
+               echo "creating working directory $2"
+               mkdir "$2" 2> /dev/null
+               if [ "$?" -eq 0 ]; then
+                   echo "working directory $2 created"
+               else
+                   echo "error happened during directory creation, code $?"
+               fi
+           else
+               echo "working directory $2 exists"
+           fi
+
         ;;
-        n) echo "creating worknote"
+        n) #echo "creating worknote"
+
+
+            worknote="$2"
+
+            if [ ! -f $worknote ]; then
+                echo "worknote $worknote does not exist"
+                echo "creating worknote $worknote"
+                touch  $worknote 2> /dev/null
+                if [ "$?" -eq 0 ]; then
+                    echo "worknote $worknote created"
+                else
+                    echo "error happened worknote creation, code $?"
+                fi
+            else
+                echo "worknote $worknote exists"
+            fi
+
         ;; 
         f) echo "creating file"
         ;;
