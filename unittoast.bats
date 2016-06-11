@@ -18,16 +18,19 @@
 }
 
 @test "check output of 'create d' output" {
+    skip "dummy unit test"
     run create d
     [ "$output" = "creating directory" ]
 }
 
 @test "check output of 'create n' output" {
+    skip "dummy unit test"
     run create n
     [ "$output" = "creating worknote" ]
 }   
 
 @test "check output of 'create f' output" {
+    skip "dummy unit test"
     run create f
     [ "$output" = "creating file" ]
 }   
