@@ -1,0 +1,47 @@
+
+
+function stamp {
+    echo $(date +"%Y.%m.%d.%H%M%S")
+}
+
+
+function npp {
+
+"$_editor" "$@" & 
+
+
+#
+# below way of running editor allows to record pid to file
+# but for some reason unknown to me yet unit tests don't pass
+# although I am sure they should pass...
+# http://stackoverflow.com/q/17385794/567964 
+#
+
+#time=$(stamp)
+#nohup $_editor "$@" > npp.$time.log 2>&1&
+#echo $! > npp.pid.$time.txt
+
+}
+
+
+function cdfcd {
+# create directory for current day
+
+}
+
+function gdfcd {
+# go to directory for current day
+
+}
+
+function cwfcd {
+# create worknote for current day 
+
+}
+
+function owfcd {
+# open worknote for current day
+
+}
+
+#vim:ts=4
