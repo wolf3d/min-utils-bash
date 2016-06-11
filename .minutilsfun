@@ -1,4 +1,5 @@
 
+. .minutilscore
 
 function stamp {
     echo $(date +"%Y.%m.%d.%H%M%S")
@@ -26,22 +27,22 @@ function npp {
 
 function cdfcd {
 # create directory for current day
-
+:
 }
 
 function gdfcd {
 # go to directory for current day
-
+:
 }
 
 function cwfcd {
 # create worknote for current day 
-
+:
 }
 
 function owfcd {
 # open worknote for current day
-
+:
 }
 
 #vim:ts=4

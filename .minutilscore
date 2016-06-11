@@ -1,0 +1,17 @@
+#!/bin/bash
+
+function create {
+
+if [ -n "$1" ]  # 
+then
+    case "$1" in
+        d) echo "creating directory"
+        ;;
+        n) echo "creating worknote"
+        ;; 
+        f) echo "creating file"
+        ;;
+    esac
+fi
+
+}
