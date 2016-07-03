@@ -1,0 +1,10 @@
+#!/bin/bash
+
+toastfile=toast.txt
+
+#_editor=/usr/bin/vim # don't quite understand why vim is not behaving while running bats unit tests
+
+_editor=/usr/bin/mousepad # example of path to mousepad
+#_editor="C:\software\npp.6.6.9.bin\notepad++.exe" # example of path to notepad++ on windows
+
+. .minutilsfun

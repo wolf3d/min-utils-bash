@@ -1,0 +1,46 @@
+#!/bin/bash
+
+function create {
+
+if [[ -n "$1" && -n "$2" ]];  # 
+then
+    case "$1" in
+        d) #echo "creating directory"
+
+           if [ ! -d "$2" ]; then
+               echo "directory $2 does not exist"
+               echo "creating directory: $2"
+               mkdir "$2" 2> /dev/null
+               if [ "$?" -eq 0 ]; then
+                   echo "directory $2 created"
+               else
+                   echo "error happened during directory creation, code $?"
+               fi
+           else
+               echo "directory $2 exists"
+           fi
+
+        ;;
+        n) #echo "creating file"
+
+
+            file="$2"
+
+            if [ ! -f $file ]; then
+                echo "file $file does not exist"
+                echo "creating $file"
+                touch  $file 2> /dev/null
+                if [ "$?" -eq 0 ]; then
+                    echo "file $file created"
+                else
+                    echo "error happened during creation of file $file, code $?"
+                fi
+            else
+                echo "file $file exists"
+            fi
+
+        ;; 
+    esac
+fi
+
+}
