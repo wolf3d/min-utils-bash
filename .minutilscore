@@ -8,40 +8,38 @@ then
         d) #echo "creating directory"
 
            if [ ! -d "$2" ]; then
-               echo "working directory $2 does not exist"
-               echo "creating working directory $2"
+               echo "directory $2 does not exist"
+               echo "creating directory: $2"
                mkdir "$2" 2> /dev/null
                if [ "$?" -eq 0 ]; then
-                   echo "working directory $2 created"
+                   echo "directory $2 created"
                else
                    echo "error happened during directory creation, code $?"
                fi
            else
-               echo "working directory $2 exists"
+               echo "directory $2 exists"
            fi
 
         ;;
-        n) #echo "creating worknote"
+        n) #echo "creating file"
 
 
-            worknote="$2"
+            file="$2"
 
-            if [ ! -f $worknote ]; then
-                echo "worknote $worknote does not exist"
-                echo "creating worknote $worknote"
-                touch  $worknote 2> /dev/null
+            if [ ! -f $file ]; then
+                echo "file $file does not exist"
+                echo "creating $file"
+                touch  $file 2> /dev/null
                 if [ "$?" -eq 0 ]; then
-                    echo "worknote $worknote created"
+                    echo "file $file created"
                 else
-                    echo "error happened worknote creation, code $?"
+                    echo "error happened during creation of file $file, code $?"
                 fi
             else
-                echo "worknote $worknote exists"
+                echo "file $file exists"
             fi
 
         ;; 
-        f) echo "creating file"
-        ;;
     esac
 fi
 
